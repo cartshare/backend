@@ -16,10 +16,11 @@ Request:
 
 Response:
 
+*Sets cookie for session.*
+
 ```js
 {
-	"error": null,
-	"tok": "ygugysdaguy89y7tsa78sa"
+	"error": null
 }
 ```
 
@@ -37,10 +38,11 @@ Request:
 
 Response:
 
+*Sets cookie for session.*
+
 ```js
 {
-	"error": null,
-	"tok": "ygugysdaguy89y7tsa78sa"
+	"error": null
 }
 ```
 
