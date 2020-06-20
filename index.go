@@ -7,6 +7,7 @@ import (
 	"github.com/gorilla/handlers"
 	"net/http"
 	"os"
+	"sync"
 
 	"github.com/gorilla/mux"
 )
@@ -30,6 +31,7 @@ type item struct {
 
 // Note: Mutexes should be used for this data, or even better, a database, in prod
 
+var usersMux sync.Mutex = sync.Mutex{}
 var users []*user = []*user{}
 var sessions map[string]string = map[string]string{}
 

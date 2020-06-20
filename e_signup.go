@@ -45,6 +45,13 @@ func signupHandler(w http.ResponseWriter, r *http.Request) {
 		return
 	}
 
+	// Lock usersMux mutex
+
+	usersMux.Lock()
+	defer usersMux.Unlock()
+
+	// Check if username taken
+
 	userWithSameUsername := getUserByUsername(req.Username)
 
 	if userWithSameUsername != nil {
