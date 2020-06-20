@@ -11,5 +11,6 @@ func logoutHandler(w http.ResponseWriter, r *http.Request) {
 		Value:   "",
 		Expires: time.Now().Add(-1 * time.Hour * 24 * 4),
 		// Set Expires to a time in the past
+		SameSite: http.SameSiteNoneMode,
 	})
 }
