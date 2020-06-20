@@ -71,7 +71,7 @@ func main() {
 	err := http.ListenAndServe(":80", handlers.LoggingHandler(os.Stdout, handlers.CORS(
 		handlers.AllowCredentials(),
 		handlers.AllowedMethods([]string{"GET", "POST", "PUT", "DELETE", "OPTIONS"}),
-		handlers.AllowedOrigins([]string{"*"}),
+		handlers.AllowedOrigins([]string{"http://localhost", "http://localhost:8080", "http://35.192.187.248", "https://35.192.187.248"}),
 	)(r)))
 
 	if err != nil {
