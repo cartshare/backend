@@ -47,6 +47,18 @@ Response:
 }
 ```
 
+### GET `/session`
+
+Response:
+
+```js
+{
+	// Will be non-null if session does not exist
+	"error": null,
+	"email": "me@ethanent.me"
+}
+```
+
 ## List Management
 
 ### GET `/list`
