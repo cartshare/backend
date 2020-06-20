@@ -18,6 +18,8 @@ type user struct {
 	loc      *geo.Location
 }
 
+// Note: Mutexes should be used for this data, or even better, a database, in prod
+
 var users []*user = []*user{}
 var sessions map[string]string = map[string]string{}
 
