@@ -3,6 +3,7 @@ package main
 import (
 	geo "github.com/codingsince1985/geo-golang"
 	"github.com/codingsince1985/geo-golang/opencage"
+	"github.com/gorilla/handlers"
 	"net/http"
 	"os"
 
@@ -55,7 +56,13 @@ func main() {
 
 	/*r.HandleFunc("/neighborList", neighborListHandler)*/
 
-	err := http.ListenAndServe(":80", r)
+	// Note: CORS allows all origins with current configuration. Do not use this configuration in production.
+
+	err := http.ListenAndServe(":80", handlers.CORS(
+		handlers.AllowCredentials(),
+		handlers.AllowedMethods([]string{"GET", "POST", "PUT", "DELETE", "OPTIONS"}),
+		handlers.AllowedOrigins([]string{"*"}),
+	)(r))
 
 	if err != nil {
 		panic(err)
