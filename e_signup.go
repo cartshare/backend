@@ -86,8 +86,7 @@ func signupHandler(w http.ResponseWriter, r *http.Request) {
 
 	users = append(users, u)
 
-	fmt.Println("Pushed user", u)
-	fmt.Println(*u.loc)
+	fmt.Println("Pushed user", u.username)
 
 	// End signup, create session
 

@@ -1,7 +1,6 @@
 package main
 
 import (
-	"fmt"
 	"net/http"
 	"strings"
 	"time"
@@ -61,8 +60,6 @@ func loginHandler(w http.ResponseWriter, r *http.Request) {
 	})
 
 	w.WriteHeader(200)
-
-	fmt.Println(tokStr)
 
 	writeResp(w, &loginResponse{
 		Error: nil,

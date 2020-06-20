@@ -1,6 +1,7 @@
 package main
 
 import (
+	"fmt"
 	geo "github.com/codingsince1985/geo-golang"
 	"github.com/codingsince1985/geo-golang/opencage"
 	"github.com/gorilla/handlers"
@@ -37,6 +38,8 @@ var items []*item = []*item{}
 var geocoder geo.Geocoder
 
 func main() {
+	fmt.Println("Preparing...")
+
 	// Init geocoder
 
 	geocoder = opencage.Geocoder(os.Getenv("OPENCAGE_KEY"))
@@ -54,15 +57,19 @@ func main() {
 	r.HandleFunc("/completeItem", authWrap(completeItemHandler))
 	r.HandleFunc("/setItemWishlisted", authWrap(setItemWishlistedHandler))
 
+	r.HandleFunc("/session", authWrap(sessionHandler))
+
 	/*r.HandleFunc("/neighborList", neighborListHandler)*/
 
 	// Note: CORS allows all origins with current configuration. Do not use this configuration in production.
 
-	err := http.ListenAndServe(":80", handlers.CORS(
+	fmt.Println("Listening on :80...")
+
+	err := http.ListenAndServe(":80", handlers.LoggingHandler(os.Stdout, handlers.CORS(
 		handlers.AllowCredentials(),
 		handlers.AllowedMethods([]string{"GET", "POST", "PUT", "DELETE", "OPTIONS"}),
 		handlers.AllowedOrigins([]string{"*"}),
-	)(r))
+	)(r)))
 
 	if err != nil {
 		panic(err)

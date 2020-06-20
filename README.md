@@ -9,7 +9,7 @@ Request:
 
 ```js
 {
-	"username": "ethan",
+	"email": "me@ethanent.me",
 	"password": "letmein"
 }
 ```
