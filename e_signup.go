@@ -50,7 +50,7 @@ func signupHandler(w http.ResponseWriter, r *http.Request) {
 	if userWithSameUsername != nil {
 		w.WriteHeader(400)
 
-		emsg := "Username is taken"
+		emsg := "Email already has an account"
 
 		writeResp(w, &signupResponse{
 			Error: &emsg,

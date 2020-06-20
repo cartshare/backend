@@ -59,9 +59,9 @@ func main() {
 
 	r.HandleFunc("/session", authWrap(sessionHandler))
 
-	/*r.HandleFunc("/neighborList", neighborListHandler)*/
+	r.HandleFunc("/neighborList", authWrap(neighborListHandler))
 
-	// Note: CORS allows all origins with current configuration. Do not use this configuration in production.
+	// Note: CORS allows all origins with current configuration. Do not use this configuration in production:
 
 	fmt.Println("Listening on :80...")
 
