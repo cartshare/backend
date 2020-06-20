@@ -50,6 +50,7 @@ func main() {
 
 	r.HandleFunc("/login", loginHandler)
 	r.HandleFunc("/signup", signupHandler)
+	r.HandleFunc("/logout", logoutHandler)
 
 	r.HandleFunc("/list", authWrap(listHandler))
 	r.HandleFunc("/createItem", authWrap(createItemHandler))

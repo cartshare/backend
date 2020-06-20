@@ -59,6 +59,12 @@ Response:
 }
 ```
 
+### GET `/logout`
+
+Response:
+
+*Deletes session cookie.*
+
 ## List Management
 
 ### GET `/list`
