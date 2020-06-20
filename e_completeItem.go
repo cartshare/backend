@@ -22,7 +22,11 @@ func completeItemHandler(u *user, w http.ResponseWriter, r *http.Request) {
 
 	for i, item := range items {
 		if item.ID == req.ID {
-			if item.owner != u {
+			if item.owner != u && (userDist(item.owner, u) > 0.5 || !item.OnWishlist) {
+				// If requesting user does not have access to item (either because not owner
+				// and item not wishlisted or because not owner and too distant from owner),
+				// they will be denied access.
+
 				w.WriteHeader(401)
 				writeResp(w, map[string]string{
 					"error": "Permission denied",
