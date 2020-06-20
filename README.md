@@ -32,7 +32,8 @@ Request:
 {
 	"username": "ethan",
 	"password": "letmein",
-	"address": "82 Bayview Ave, Mendocino, CA"
+	"address": "82 Bayview Ave, Mendocino, CA",
+	"name": "Ethan Davis"
 }
 ```
 
