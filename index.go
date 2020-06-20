@@ -50,10 +50,10 @@ func main() {
 	r.HandleFunc("/list", authWrap(listHandler))
 	r.HandleFunc("/createItem", authWrap(createItemHandler))
 
-	/*r.HandleFunc("/completeItem", completeItemHandler)
-	r.HandleFunc("/setItemWishlisted", setItemWishlistedHandler)
+	r.HandleFunc("/completeItem", authWrap(completeItemHandler))
+	r.HandleFunc("/setItemWishlisted", authWrap(setItemWishlistedHandler))
 
-	r.HandleFunc("/neighborList", neighborListHandler)*/
+	/*r.HandleFunc("/neighborList", neighborListHandler)*/
 
 	err := http.ListenAndServe(":80", r)
 
