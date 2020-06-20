@@ -20,3 +20,17 @@ func userDist(a, b *user) float64 {
 
 	return mi
 }
+
+func getNeighbors(a *user) []*user {
+	// Find neighbors within half a mile
+
+	neighbors := []*user{}
+
+	for _, u := range users {
+		if userDist(a, u) <= 0.5 {
+			neighbors = append(neighbors, u)
+		}
+	}
+
+	return neighbors
+}
