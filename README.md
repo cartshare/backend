@@ -57,13 +57,13 @@ Response:
 {
 	"items": [
 		{
-			"id": 1,
+			"id": "d7d9a826dc100f728ddfc39e11245c",
 			"desc": "Target Frosted Wheats Cereal",
 			"qty": 2,
 			"onWishlist": false
 		},
 		{
-			"id": 2,
+			"id": "4c57859d1a8a19572f8e3574c6e4bb",
 			"desc": "Apple",
 			"qty": 8,
 			"onWishlist": true
@@ -97,7 +97,7 @@ Request:
 
 ```js
 {
-	"itemId": 2
+	"itemId": "d7d9a826dc100f728ddfc39e11245c"
 }
 ```
 
@@ -115,7 +115,7 @@ Request:
 
 ```js
 {
-	"itemId": 2,
+	"itemId": "d7d9a826dc100f728ddfc39e11245c",
 	"wishlisted": false
 }
 ```
@@ -140,13 +140,13 @@ Response:
 {
 	"neighborRequests": [
 		{
-			"id": 2,
+			"id": "4c57859d1a8a19572f8e3574c6e4bb",
 			"desc": "Apple",
 			"qty": 8,
 			"owner": "Ethan Davis"
 		},
 		{
-			"id": 9,
+			"id": "d7d9a826dc100f728ddfc39e11245c",
 			"desc": "Birthday Cake Mix",
 			"qty": 1,
 			"owner": "James Smith"

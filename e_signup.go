@@ -91,7 +91,7 @@ func signupHandler(w http.ResponseWriter, r *http.Request) {
 
 	// End signup, create session
 
-	tokStr, err := genToken()
+	tokStr, err := genToken(64)
 
 	if err != nil {
 		w.WriteHeader(500)

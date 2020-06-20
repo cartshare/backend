@@ -42,7 +42,7 @@ func loginHandler(w http.ResponseWriter, r *http.Request) {
 		return
 	}
 
-	tokStr, err := genToken()
+	tokStr, err := genToken(64)
 
 	if err != nil {
 		w.WriteHeader(500)

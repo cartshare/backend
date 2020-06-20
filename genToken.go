@@ -5,12 +5,12 @@ import (
 	"encoding/hex"
 )
 
-func genToken() (string, error) {
+func genToken(lenTarget int) (string, error) {
 	// Generate savage 64 byte session token
 
 	tok := []byte{}
 
-	for len(tok) < 64 {
+	for len(tok) < lenTarget {
 		temp := make([]byte, 8)
 
 		n, err := rand.Read(temp)
@@ -24,7 +24,7 @@ func genToken() (string, error) {
 		tok = append(tok, temp...)
 	}
 
-	tok = tok[:63]
+	tok = tok[:lenTarget-1]
 
 	tokStr := hex.EncodeToString(tok)
 
