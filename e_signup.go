@@ -107,9 +107,10 @@ func signupHandler(w http.ResponseWriter, r *http.Request) {
 	sessions[tokStr] = u.username
 
 	http.SetCookie(w, &http.Cookie{
-		Name:    "sess",
-		Value:   tokStr,
-		Expires: time.Now().Add(time.Hour * 24 * 4),
+		Name:     "sess",
+		Value:    tokStr,
+		Expires:  time.Now().Add(time.Hour * 24 * 4),
+		SameSite: http.SameSiteNoneMode,
 	})
 
 	w.WriteHeader(200)
