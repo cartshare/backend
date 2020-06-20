@@ -1,6 +1,21 @@
 # backend
 > Backend service for CartShare
 
+Account management
+- [POST /login](#post-login)
+- [POST /signup](#post-signup)
+- [GET /session](#get-session)
+- [GET /logout](#get-logout)
+
+List management
+- [GET /list](#get-list)
+- [POST /createItem](#post-createitem)
+- [POST /completeItem](#post-completeitem)
+- [POST /setItemWishlisted](#post-setitemwishlisted)
+
+Neighbor features
+- [GET /neighborList](#get-neighborlist)
+
 ## Account Management
 
 ### POST `/login`
