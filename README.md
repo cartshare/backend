@@ -51,7 +51,7 @@ Response:
 
 ### GET `/list`
 
-Request:
+Response:
 
 ```js
 {
@@ -69,14 +69,6 @@ Request:
 			"onWishlist": true
 		}
 	]
-}
-```
-
-Response:
-
-```js
-{
-	"error": null
 }
 ```
 
@@ -142,7 +134,7 @@ Note: To complete a neighbor's request, use the `/completeItem` endpoint.
 
 ### GET `/neighborList`
 
-Request:
+Response:
 
 ```js
 {
