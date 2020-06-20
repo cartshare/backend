@@ -30,10 +30,10 @@ Request:
 
 ```js
 {
-	"username": "ethan",
+	"name": "Ethan Davis",
+	"email": "me@ethanent.me",
 	"password": "letmein",
-	"address": "82 Bayview Ave, Mendocino, CA",
-	"name": "Ethan Davis"
+	"address": "82 Bayview Ave, Mendocino, CA"
 }
 ```
 
