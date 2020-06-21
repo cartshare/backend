@@ -23,8 +23,8 @@ type user struct {
 
 type item struct {
 	ID         string `json:"id"`
-	Desc       string `json:"Desc"`
-	Qty        int    `json:"Qty"`
+	Desc       string `json:"desc"`
+	Qty        int    `json:"qty"`
 	OnWishlist bool   `json:"onWishlist"`
 	owner      *user
 }
