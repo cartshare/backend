@@ -7,7 +7,7 @@ import (
 type neighborItem struct {
 	ID        string `json:"id"`
 	Desc      string `json:"desc"`
-	Qty       int    `json:"quantity"`
+	Qty       int    `json:"qty"`
 	OwnerName string `json:"owner"`
 }
 
