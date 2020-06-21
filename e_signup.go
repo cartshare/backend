@@ -85,10 +85,11 @@ func signupHandler(w http.ResponseWriter, r *http.Request) {
 	// Create user
 
 	u := &user{
-		username: req.Username,
-		name:     req.Name,
-		password: req.Password,
-		loc:      loc,
+		username:      req.Username,
+		name:          req.Name,
+		password:      req.Password,
+		loc:           loc,
+		notifications: []*notification{},
 	}
 
 	users = append(users, u)

@@ -16,6 +16,10 @@ List management
 Neighbor features
 - [GET /neighborList](#get-neighborlist)
 
+Notification features
+- [GET /notifications](#get-notifications)
+- [POST /deleteNotification](#post-deletenotification)
+
 ## Account Management
 
 ### POST `/login`
@@ -185,5 +189,42 @@ Response:
 			"owner": "James Smith"
 		}
 	]
+}
+```
+
+## Notification Features
+
+### GET `/notifications`
+
+Response:
+
+```js
+{
+	"error": null,
+	"notifications": [
+		{
+			"id": "b78a3f5ca090fbfca060e0e590d523",
+			"title": "Request for 2x Apple Fulfilled",
+			"body": "Your neighbor Ethan Davis has completed your request.",
+			"created": "2020-06-20T22:50:50.464944-07:00"
+		}
+	]
+}
+```
+
+### POST `/deleteNotification`
+
+Request:
+
+```js
+{
+	"notificationId": "b78a3f5ca090fbfca060e0e590d523"
+}
+```
+Response:
+
+```js
+{
+	"error": null
 }
 ```

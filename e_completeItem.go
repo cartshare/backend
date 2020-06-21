@@ -2,6 +2,7 @@ package main
 
 import (
 	"net/http"
+	"strconv"
 )
 
 type completeItemRequest struct {
@@ -33,6 +34,15 @@ func completeItemHandler(u *user, w http.ResponseWriter, r *http.Request) {
 				})
 
 				return
+			}
+
+			// Send notification to completee if item completed by neighbor
+
+			if item.owner != u {
+				pushNotification(item.owner, &notification{
+					Title: "Request for " + strconv.Itoa(item.Qty) + "x " + item.Desc + " Fulfilled",
+					Body:  "Your neighbor " + u.name + " has completed your request.",
+				})
 			}
 
 			// Delete item

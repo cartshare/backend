@@ -8,17 +8,26 @@ import (
 	"net/http"
 	"os"
 	"sync"
+	"time"
 
 	"github.com/gorilla/mux"
 )
 
+type notification struct {
+	ID      string    `json:"id"`
+	Title   string    `json:"title"`
+	Body    string    `json:"body"`
+	Created time.Time `json:"created"`
+}
+
 // Note: Unhashed password not to be saved to disk.
 // Unhashed password is used in memory for demonstration.
 type user struct {
-	username string
-	name     string
-	password string
-	loc      *geo.Location
+	username      string
+	name          string
+	password      string
+	loc           *geo.Location
+	notifications []*notification
 }
 
 type item struct {
@@ -63,6 +72,9 @@ func main() {
 	r.HandleFunc("/session", authWrap(sessionHandler))
 
 	r.HandleFunc("/neighborList", authWrap(neighborListHandler))
+
+	r.HandleFunc("/notifications", authWrap(notificationsHandler))
+	r.HandleFunc("/deleteNotification", authWrap(deleteNotificationHandler))
 
 	// Note: CORS allows all origins with current configuration. Do not use this configuration in production:
 
