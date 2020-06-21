@@ -41,7 +41,7 @@ func completeItemHandler(u *user, w http.ResponseWriter, r *http.Request) {
 			if item.owner != u {
 				pushNotification(item.owner, &notification{
 					Title: "Request for " + strconv.Itoa(item.Qty) + "x " + item.Desc + " Fulfilled",
-					Body:  "Your neighbor " + u.name + " has completed your request.",
+					Body:  "Your neighbor, " + u.name + ", has completed your request.",
 				})
 			}
 
